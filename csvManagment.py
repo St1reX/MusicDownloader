@@ -15,5 +15,5 @@ class CSVManager:
                 for song in row:
                     songs.append(song)
 
-        print(songs)
+        print(f"Songs array: {songs}")
         return songs

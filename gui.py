@@ -17,9 +17,9 @@ class UserGui:
         return directory
 
     def ask_file(self):
-            self.root.withdraw()
+        self.root.withdraw()
 
-            filename = filedialog.askopenfilename(title="Select file with YouTube playlists or songs URLs", filetypes=[("CSVs", "*.csv")])
-            self.CONFIG = filename
-            print(f"Configuration file selected: {self.CONFIG}")
-            return filename
+        filename = filedialog.askopenfilename(title="Select file with YouTube playlists or songs URLs", filetypes=[("Comma separated", "*.csv")])
+        self.CONFIG = filename
+        print(f"Configuration file selected: {self.CONFIG}")
+        return filename
