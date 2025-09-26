@@ -1,8 +1,15 @@
+from csvManagment import CSVManager
 from gui import UserGui
-from pytube import YouTube
+from pytubefix import YouTube
 
 class YTDownloader:
     def __init__(self):
-        self.gui = UserGui()
-        self.download_destination = self.gui.ask_directory()
-        self.config_file = self.gui.ask_file()
+        self.csv = CSVManager()
+        self.songs = self.csv.csv2list()
+
+    def download(self):
+        gui = UserGui()
+        download_destination = gui.ask_directory()
+
+        for song in self.songs:
+            YouTube(song).streams.filter().get_audio_only().download(download_destination)

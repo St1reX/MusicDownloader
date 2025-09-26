@@ -10,7 +10,7 @@ class UserGui:
 
     def ask_directory(self):
         self.root.withdraw()
-        directory = filedialog.askdirectory()
+        directory = filedialog.askdirectory(title="Select a directory to save music")
 
         self.DESTINATION_DIRECTORY = directory
         print(f"Destination directory: {self.DESTINATION_DIRECTORY}")
@@ -19,7 +19,7 @@ class UserGui:
     def ask_file(self):
             self.root.withdraw()
 
-            filename = filedialog.askopenfilename()
+            filename = filedialog.askopenfilename(title="Select file with YouTube playlists or songs URLs", filetypes=[("CSVs", "*.csv")])
             self.CONFIG = filename
             print(f"Configuration file selected: {self.CONFIG}")
             return filename
