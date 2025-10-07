@@ -1,5 +1,3 @@
-from contextlib import nullcontext
-
 from csvManagment import CSVManager
 from gui import UserGui
 from pytubefix import YouTube
